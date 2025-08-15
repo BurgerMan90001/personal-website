@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const router = (0, express_1.Router)();
 let tasks = [];
+// create task operation
 router.post('/', (req, res) => {
     const task = {
         id: tasks.length + 1,
@@ -12,10 +13,13 @@ router.post('/', (req, res) => {
     };
     tasks.push(task);
     res.status(201).json(task);
+    console.log("post");
 });
+// retrive all tasks operation
 router.get('/', (req, res) => {
     res.json(tasks);
 });
+// read a single task
 router.get('/:id', (req, res) => {
     const task = tasks.find((t) => t.id === parseInt(req.params.id));
     if (!task) { // searches for the task by id
@@ -25,6 +29,7 @@ router.get('/:id', (req, res) => {
         res.json(task);
     }
 });
+// update a task by id
 router.put('/:id', (req, res) => {
     const task = tasks.find((t) => t.id === parseInt(req.params.id));
     if (!task) {
@@ -37,6 +42,7 @@ router.put('/:id', (req, res) => {
         res.json(task);
     }
 });
+// delete a task by id
 router.delete('/:id', (req, res) => {
     const index = tasks.findIndex((t) => t.id === parseInt(req.params.id));
     if (index === -1) {
