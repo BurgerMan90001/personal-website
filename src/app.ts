@@ -1,4 +1,4 @@
-import express, { Request, response, Response } from 'express'; // Import the express in typescript file
+import express, { Request, Response } from 'express'; // Import the express in typescript file
 import path from "path";
 import dotenv from 'dotenv';
 import taskRoutes from './routes/tasks';

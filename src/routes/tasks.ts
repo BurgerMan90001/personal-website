@@ -5,13 +5,8 @@ import { Task } from '../models/task';
 const router = Router();
 let tasks: Task[] = [];
 
-console.log("jkadskajda");
-function test() {
-    console.log("aksjnddkjasdlkjas");
-}
 
-function create() {
-    router.post('/', (req: Request, res: Response) => {
+router.post('/', (req: Request, res: Response) => {
     const task: Task = {
         id: tasks.length + 1,
         title: req.body.title,
@@ -21,17 +16,17 @@ function create() {
 
     tasks.push(task);
     res.status(201).json(task);
-    });
-}
+});
 
-function readAll() {
-    router.get('/', (req: Request, res: Response) => {
-        res.json(tasks);
-    });
-}
 
-function read() {
-    router.get('/:id', (req: Request, res: Response) => {
+
+router.get('/', (req: Request, res: Response) => {
+    res.json(tasks);
+});
+
+
+
+router.get('/:id', (req: Request, res: Response) => {
     const task = tasks.find((t) => t.id === parseInt(req.params.id));
 
     if (!task) { // searches for the task by id
@@ -39,28 +34,31 @@ function read() {
     } else {
         res.json(task);
     }
-    });
-
-}
-
-function update() {
+});
     
-    router.put('/:id', (req: Request, res: Response) => {
+router.put('/:id', (req: Request, res: Response) => {
     const task = tasks.find((t) => t.id === parseInt(req.params.id));
 
-        if (!task) {
-            res.status(404).send('Task not found');
-        } else {
-            task.title = req.body.title || task.title;
-            task.description = req.body.description || task.description;
-            task.completed = req.body.completed || task.completed;
+    if (!task) {
+        res.status(404).send('Task not found');
+    } else {
+        task.title = req.body.title || task.title;
+        task.description = req.body.description || task.description;
+        task.completed = req.body.completed || task.completed;
 
-            res.json(task);
-        }
-    });
-}
+        res.json(task);
+    }
+});
 
-create();
-readAll();
+router.delete('/:id', (req: Request, res: Response) => {
+    const index = tasks.findIndex((t) => t.id === parseInt(req.params.id));
+
+    if (index === -1) {
+        res.status(404).send('Task not found');
+    } else {
+        tasks.splice(index, 1);
+        res.status(204).send();
+    }
+});
 
 export default router;
