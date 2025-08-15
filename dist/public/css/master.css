@@ -5,13 +5,12 @@
   --light-grey: #333333;
   --dark-grey: #1d1d1d;
 
-
   --white: #dddcdc;
   --dark-white: #b9b9b9;
 
   --blue: #262446;
 
-  --green: #2f6e2f;
+  --green: #2f6e2f; 
   --dark-green: #1b2e1b;
 }
 
@@ -106,9 +105,9 @@ a:hover {
 }
 
 
-
 .logo {
   font-size: xx-large;
+  display: inline;
 }
 
 .logo:hover {
@@ -123,6 +122,22 @@ ul {
 }
 
 
+
+/* projects page */
+#projects-container {
+
+}
+
+.project-toc {
+
+}
+
+.project-toc-item > a {
+    display: inline;
+}
+.project-toc-item:hover > a:hover {
+    text-decoration: underline;
+}
 
 
 button {
