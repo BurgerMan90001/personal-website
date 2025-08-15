@@ -15,17 +15,8 @@ function get(uri: string) {
         onOk(response);
         return response;
     })
-
     .then((response: Response) => onOk(response)) // You can continue to do something to the response.
     .catch((error: Error) => onError(error)); // In case of an error, it will log an error
-  
-}
-function onOk(response: Response) {
-    console.log(response);
-}
-function onError(error: Error) 
-{
-    console.error("Fetch error:", error)
 }
 
 function create() {
@@ -33,3 +24,12 @@ function create() {
 }
 
 
+
+
+function onOk(response: Response) {
+    console.log(response);
+}
+function onError(error: Error) 
+{
+    console.error("Fetch error:", error)
+}

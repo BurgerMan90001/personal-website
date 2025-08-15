@@ -17,12 +17,12 @@ function get(uri) {
         .then((response) => onOk(response)) // You can continue to do something to the response.
         .catch((error) => onError(error)); // In case of an error, it will log an error
 }
+function create() {
+    tasks_1.default.post('/');
+}
 function onOk(response) {
     console.log(response);
 }
 function onError(error) {
     console.error("Fetch error:", error);
-}
-function create() {
-    tasks_1.default.post('/');
 }
