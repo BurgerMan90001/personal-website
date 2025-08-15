@@ -5,10 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon dist/app.js",
-    "build": "npm run clean && tsc --build",
+    "copy": "xcopy src\\public\\site dist\\public\\site /E /I",
+    "clean-build": "npm run clean && tsc --build && npm run copy",
     "clean": "rimraf dist/* --glob",
-    "copy-files": "npm run copyfiles -u 1 src/**/*.html src/**/*.css dist/",
-    "serve": "npm run clean && npm run build && npm run start",
+    
+    "serve": "npm run build && npm run start",
     "test": "echo \"Errocl;r: no test specified\" && exit 1"
   },
   "repository": {

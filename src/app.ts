@@ -14,8 +14,6 @@ const site: string = `http://localhost:${port}/`;
 app.use(express.json()); // Add this line to enable JSON parsing in the request body
 app.use('/tasks', tasksController); // Add this line to mount the Task API routes controller
 
-
-
 if (showRequests) {
     app.use('/', (request, response, next) => {
         console.log('Request Type:', request.method, request.url);
@@ -29,7 +27,7 @@ app.get('/tasks', function (req, res) {
 });
 
 
-// 
+// staticly load the public folder
 app.use(express.static(__dirname + '/public'));
 
 // starts a simple http server locally on port 3000
