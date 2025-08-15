@@ -1,5 +1,4 @@
-
-
+"use strict";
 /*
 
 function get(url: string) {
@@ -43,8 +42,8 @@ function create(url: string) {
 function onOk(response: Response) {
     console.log(response);
 }
-function onError(error: Error) 
+function onError(error: Error)
 {
     console.error("Fetch error:", error)
 }
-*/
+*/ 

@@ -4,9 +4,11 @@
   "description": "webdsite",
   "main": "app.js",
   "scripts": {
-    "build": "tsc --build",
-    "clean-build": "tsc --build --clean",
-    "serve": "tsc --build && nodemon dist/app.js",
+    "start": "nodemon dist/app.js",
+    "build": "npm run clean && tsc --build",
+    "clean": "rimraf dist/* --glob",
+    "copy-files": "npm run copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "serve": "npm run clean && npm run build && npm run start",
     "test": "echo \"Errocl;r: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +30,7 @@
     "@types/node": "^24.3.0",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }

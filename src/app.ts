@@ -1,6 +1,6 @@
 import express from 'express'; // Import the express in typescript file
 import dotenv from 'dotenv';
-import taskRoutes from './routes/tasks';
+import { tasksController } from './controllers/tasks.contoller'; // Import the task routes
 
 const showRequests: boolean = true;
 
@@ -12,7 +12,9 @@ const port: string = process.env.PORT || "3000"; // Take a port 3000 for running
 const site: string = `http://localhost:${port}/`;
 
 app.use(express.json()); // Add this line to enable JSON parsing in the request body
-app.use('/tasks', taskRoutes); // Add this line to mount the Task API routes
+app.use('/tasks', tasksController); // Add this line to mount the Task API routes controller
+
+
 
 if (showRequests) {
     app.use('/', (request, response, next) => {
@@ -20,6 +22,11 @@ if (showRequests) {
         next();
     })
 }
+
+app.get('/tasks', function (req, res) {
+    console.log("/tasks request called");
+    res.send('Welcome to GeeksforGeeks');
+});
 
 
 // 
