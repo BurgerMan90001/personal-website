@@ -12,6 +12,6 @@
       "node",
     ],
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "app.ts", "server.ts"],
   "exclude": ["node_modules"]
 }

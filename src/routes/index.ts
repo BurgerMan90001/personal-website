@@ -14,7 +14,7 @@ function get(url: string) {
     fetch(url, {
         method: 'GET',
         headers: {
-         //   'Content-Type': 'application/json',
+    //   ' Content-Type': 'application/json',
         },
     })
     .then((response: Response) => {
