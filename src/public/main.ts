@@ -18,7 +18,6 @@ function get(uri: string) {
 
     .then((response: Response) => onOk(response)) // You can continue to do something to the response.
     .catch((error: Error) => onError(error)); // In case of an error, it will log an error
-
   
 }
 function onOk(response: Response) {
