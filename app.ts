@@ -15,12 +15,4 @@ app.use('/', indexController);
 app.use(express.static(publicPath));
 
 
-/*
-// tasks testing
-app.get('/tasks', function (req, res) {
-    console.log("/tasks request called");
-    res.send('TASKS API is working');
-});
-*/
-
 export { app }; 
