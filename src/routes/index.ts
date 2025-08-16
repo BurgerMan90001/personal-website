@@ -1,4 +1,6 @@
 
+import { log } from '../util/logger';
+log('Server is starting...');   
 
 /*
 

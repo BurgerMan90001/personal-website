@@ -1,1 +1,1 @@
-{"root":["../src/controllers/taskscontoller.ts","../src/models/content.ts","../src/models/task.ts","../src/routes/index.ts","../src/routes/tasksroute.ts","../app.ts","../server.ts"],"version":"5.9.2"}
+{"root":["../src/controllers/taskscontoller.ts","../src/models/task.ts","../src/routes/index.ts","../src/routes/tasksroute.ts","../app.ts","../server.ts"],"version":"5.9.2"}
