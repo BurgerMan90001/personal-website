@@ -2,7 +2,7 @@
 
 
 
-function get(url: string) {
+function get(url) {
     
     
     taskRoutes.get('/tasks', (req, res) => {
@@ -17,9 +17,10 @@ function get(url: string) {
     //   ' Content-Type': 'application/json',
         },
     })
-    .then((response: Response) => {
+    .then((response) => {
         // If the response is not 2xx, throw an error
         if (!response.ok) {
+            r
             throw new Error("Network response was not ok");
         }
 
@@ -27,8 +28,8 @@ function get(url: string) {
         onOk(response);
         return response;
     })
-    .then((response: Response) => onOk(response)) // You can continue to do something to the response.
-    .catch((error: Error) => onError(error)); // In case of an error, it will log an error
+    .then((response) => onOk(response)) // You can continue to do something to the response.
+    .catch((error) => onError(error)); // In case of an error, it will log an error
     
     
 }
@@ -36,19 +37,16 @@ function get(url: string) {
 function create() {
     const url = '/tasks';
     try {
-        const response = await fetch(url, {
+        const response = fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(
-
-                { action: 'upvote',
-                    
+                { 
                     userId: 12345,
                     taskId: 67890,
                     timestamp: new Date().toISOString()
-
                  }
             ) // Send data as JSON
         });
@@ -61,11 +59,10 @@ function create() {
 
 
 
-function onOk(response: Response) {
+function onOk(response) {
     console.log(response);
 }
-function onError(error: Error) 
+function onError(error) 
 {
     console.error("Fetch error:", error)
 }
-*/

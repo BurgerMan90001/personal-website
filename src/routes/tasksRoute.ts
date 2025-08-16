@@ -1,7 +1,6 @@
 
 import { Request, Response } from 'express';
 import { Task } from '../models/task';
-import { TaskOperations } from '../models/taskOperations';
 
 let tasks : Task[] = [];
 
@@ -78,7 +77,7 @@ function findTaskById(id: string) : Task | undefined {
     return tasks.find((t) => t.id === parseInt(id));
 }
 
-export const taskOperations: TaskOperations = {
+export const taskOperations = {
     createTask,
     getAllTasks,
     getTaskById,

@@ -18,4 +18,4 @@ if (showRequests) {
 // starts a simple http server locally on port 3000
 app.listen(port, () => {
     console.log("listening on : " + siteUrl); // show site
-}); // start the server on the port
+}); 
