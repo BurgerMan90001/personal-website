@@ -5,11 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon dist/server.js",
-    "copy": "xcopy public dist\\public /E /I",
-    "build": "npm run clean && tsc --build && npm run copy",
     "clean": "rimraf dist/* --glob",
+    "build": "npm run clean && tsc --build",
+    
     "serve": "npm run build && npm run start",
+
     "ejs": "ejslint views/index.ejs",
+
+    "copy": "xcopy public dist\\public /E /I",
+
     "test": "echo \"Errocl;r: no test specified\" && exit 1"
   },
   "repository": {

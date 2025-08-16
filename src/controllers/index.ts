@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as indexRoutes from "../routes/indexRoutes";
+import * as indexRoutes from "../routes";
 
 const router: Router = Router();
 
