@@ -11,6 +11,11 @@ app.use(express.json()); // Add this line to enable JSON parsing in the request 
 app.use('/tasks', tasksController); // Add this line to mount the Task API routes controller
 app.use('/', indexController);
 
+// 404 not found page
+app.all('*', (req, res) => {
+  res.status(404).send('<h1>404! Page not found</h1>');
+});
+
 // staticly load the public folder
 app.use(express.static(publicPath));
 
