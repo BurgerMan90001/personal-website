@@ -12,9 +12,8 @@ if (showRequests) {
     app.use('/', (request, response, next) => {
         console.log('Request Type:', request.method, request.url);
         next();
-    })
+    });
 };
-
 
 // starts a simple http server locally on port 3000
 app.listen(port, () => {
