@@ -2,13 +2,13 @@
   "name": "my-webstite",
   "version": "1.0.0",
   "description": "webdsite",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon dist/app.js",
+    "start": "nodemon dist/server.js",
     "copy": "xcopy public dist\\public /E /I",
     "build": "npm run clean && tsc --build && npm run copy",
     "clean": "rimraf dist/* --glob",
-    "serve": "npm run clean-build && npm run start",
+    "serve": "npm run build && npm run start",
     
     "test": "echo \"Errocl;r: no test specified\" && exit 1"
   },
