@@ -1,11 +1,20 @@
 
-import express, { Request, Response } from 'express';
-import path from 'path';
-
-
+import { Request, Response } from 'express';
 
 // MAYBE USE A VIEW ENGINE
+router.get('/', (req, res, next) => {
+  res.render('index', { page: 'Home' });
+});
+
+router.get('/about', (req, res, next) => {
+  res.render('index', { page: 'About' });
+});
+
+router.get('/contact-me', (req, res, next) => {
+  res.render('index', { page: 'Contact Me' });
+});
 export function getIndex(req: Request, res: Response): void  {
+    res.render('index', { page: 'Home' })
     res.sendFile('index.html', { root : 'public' });
 
 }
