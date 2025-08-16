@@ -1,7 +1,9 @@
-//MAYBE EXPAND
-export interface Task {
-  id: number;
-  title: string;
-  description: string;
-  completed: boolean;
+
+declare module 'models' {
+    interface Task {
+        id: number;
+        title: string;
+        description: string;
+        completed: boolean;
+    }
 }

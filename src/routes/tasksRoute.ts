@@ -1,6 +1,6 @@
 
 import { Request, Response } from 'express';
-import { Task } from '../models/task';
+import { Task } from 'models';
 
 let tasks : Task[] = [];
 
