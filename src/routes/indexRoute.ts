@@ -2,6 +2,7 @@
 import { Request, Response } from 'express';
 
 // MAYBE USE A VIEW ENGINE
+/*
 router.get('/', (req, res, next) => {
   res.render('index', { page: 'Home' });
 });
@@ -13,6 +14,7 @@ router.get('/about', (req, res, next) => {
 router.get('/contact-me', (req, res, next) => {
   res.render('index', { page: 'Contact Me' });
 });
+*/
 export function getIndex(req: Request, res: Response): void  {
     res.render('index', { page: 'Home' })
     res.sendFile('index.html', { root : 'public' });

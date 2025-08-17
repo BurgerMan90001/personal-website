@@ -8,7 +8,7 @@ router.get('/projects', getProjectsPage);
 
 router.get('/contact', getContactPage);
 
-router.use(getNotFoundPage); // when there is an invalid route
+router.use(getNotFoundPage); // when there is an invalid route, 404 error
 
 
 
