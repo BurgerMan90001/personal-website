@@ -9,6 +9,7 @@
     "build": "npm run clean && tsc --build && npm run copy",
     "clean": "rimraf dist/* --glob",
     "serve": "npm run build && npm run start",
+    "ejs": "ejslint views/index.ejs",
     "test": "echo \"Errocl;r: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,8 +24,11 @@
   },
   "homepage": "https://github.com/BurgerMan90001/My-webstite#readme",
   "dependencies": {
+    "@types/express-ejs-layouts": "^2.5.4",
     "dotenv": "^17.2.1",
-    "ejs": "^3.1.10"
+    "ejs": "^3.1.10",
+    "express-ejs-layouts": "^2.5.1",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",

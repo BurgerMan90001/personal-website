@@ -14,4 +14,4 @@ router.put('/:id', taskOperations.updateTaskById); // /tasks:id PUT
 router.delete('/:id', taskOperations.deleteTaskById); // /tasks:id DELETE
 
 
-export default { router };
+export { router as tasksController };

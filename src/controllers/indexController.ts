@@ -1,16 +1,15 @@
-
 import { Router } from "express";
-import { getProjectsPage, getContactPage, getNotFoundPage } from "../routes/indexRoute";
+import * as indexRoutes from "../routes/indexRoutes";
 
 const router: Router = Router();
 
-router.get('/projects', getProjectsPage);
+router.get('/', indexRoutes.getIndex); // home page
 
-router.get('/contact', getContactPage);
+router.get('/projects', indexRoutes.getProjectsPage);
 
-router.use(getNotFoundPage); // when there is an invalid route, 404 error
+router.get('/contact', indexRoutes.getContactPage);
+
+router.use(indexRoutes.getNotFoundPage); // when there is an invalid route, 404 error
 
 
-
-
-export { router as indexController };
+export { router as indexController } ;
