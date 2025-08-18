@@ -9,20 +9,20 @@ import expressLayouts from 'express-ejs-layouts';
 
 dotenv.config(); // load the env file
 
-const showRequests: boolean = true;
+const loggingEnabled: boolean = true;
 const port: string = process.env.PORT || "3000"; // Take a port 3000 for running server.
 const siteUrl: string = `http://localhost:${port}/`; 
 //const publicPath: string = path.join(__dirname,'/public'); // Define the public path
 const publicPath: string = path.join('public'); // Define the public path
 
-app.use(util.logger); // enable logging
+useLogging();
+
 app.use(expressLayouts); // use layouts
 app.use(express.json()); // Add this line to enable JSON parsing in the request body
 
 loadPublicFolder(publicPath);
 
-app.use('/tasks', routers.tasksRoutes); // Add this line to mount the Task API routes controller
-app.use('/', routers.indexRoutes); // mount index api
+setupRoutes();
 
 setupViews();
 
@@ -35,19 +35,39 @@ function loadPublicFolder(publicPath: string) {
     app.use(express.static(util.files.tryGetSync(publicPath)));
 }
 
+/**
+ * starts a simple http server locally on the specified port and logs the site url
+ * @param {string} port - port number in string form
+ */
 
 function startServer(port: string) {
-    // starts a simple http server locally on the specified port
+
     app.listen(port, () => {
         console.log("listening on : " + siteUrl); // show site
     }); 
 }
 
+
+function test() {
+
+} 
 function setupViews() {
+    
     // set the view engine 
     app.set('view engine', 'ejs'); 
     // set the views directory (where templates will be stored)
     app.set('views', './views');
     // set default layout file to layout
     app.set('layout', 'layouts/layout');
+}
+
+function useLogging() {
+    if (loggingEnabled) {
+        app.use(util.logger); // log all requests
+    }
+}
+
+function setupRoutes() {
+    app.use('/tasks', routers.tasksRoutes); // Add this line to mount the Task API routes controller
+    app.use('/', routers.indexRoutes); // mount index api
 }

@@ -5,7 +5,7 @@ import { TaskController } from "controllers";
 
 
 // mock database
-let tasks: Task[] = [];
+const tasks: Task[] = [];
 
 // database search functions
 function findTaskIndexById(id: string) : number {

@@ -1,7 +1,7 @@
 
 
 
-
+/*
 function get(url) {
     
     
@@ -20,7 +20,7 @@ function get(url) {
     .then((response) => {
         // If the response is not 2xx, throw an error
         if (!response.ok) {
-            r
+            
             throw new Error("Network response was not ok");
         }
 
@@ -66,3 +66,4 @@ function onError(error)
 {
     console.error("Fetch error:", error)
 }
+*/
