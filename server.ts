@@ -7,8 +7,6 @@ import express from 'express';
 import path from 'path';
 import expressLayouts from 'express-ejs-layouts';
 
-
-
 dotenv.config(); // load the env file
 
 const showRequests: boolean = true;
@@ -23,7 +21,6 @@ app.use(express.json()); // Add this line to enable JSON parsing in the request 
 
 loadPublicFolder(publicPath);
 
-
 app.use('/tasks', routers.tasksRoutes); // Add this line to mount the Task API routes controller
 app.use('/', routers.indexRoutes); // mount index api
 
@@ -34,7 +31,7 @@ startServer(port);
 function loadPublicFolder(publicPath: string) {
 
     // staticly load the public folder
-    console.log(publicPath);
+    //console.log(publicPath);
     app.use(express.static(util.files.tryGetSync(publicPath)));
 }
 

@@ -11,5 +11,3 @@ export const files: Files = {
         return filePath;
     }
 }
-    
-    
