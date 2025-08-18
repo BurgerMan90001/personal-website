@@ -1,11 +1,13 @@
-import { tasksController } from './src/controllers/tasks'; // Import the task routes
-import { indexController } from './src/controllers/index'; // Import the index routes
-import { logger } from './src/util/logger';
+
+import * as routers from './src/routes';
+import * as util from './src/util';
 import dotenv from 'dotenv';
 import { app } from './app';
 import express from 'express';
 import path from 'path';
 import expressLayouts from 'express-ejs-layouts';
+
+
 
 dotenv.config(); // load the env file
 
@@ -15,15 +17,15 @@ const siteUrl: string = `http://localhost:${port}/`;
 //const publicPath: string = path.join(__dirname,'/public'); // Define the public path
 const publicPath: string = path.join('public'); // Define the public path
 
-app.use(logger); // enable logging
+app.use(util.logger); // enable logging
 app.use(expressLayouts); // use layouts
 app.use(express.json()); // Add this line to enable JSON parsing in the request body
 
 loadPublicFolder(publicPath);
 
 
-app.use('/tasks', tasksController); // Add this line to mount the Task API routes controller
-app.use('/', indexController); // mount index api
+app.use('/tasks', routers.tasksRoutes); // Add this line to mount the Task API routes controller
+app.use('/', routers.indexRoutes); // mount index api
 
 setupViews();
 
@@ -33,7 +35,7 @@ function loadPublicFolder(publicPath: string) {
 
     // staticly load the public folder
     console.log(publicPath);
-    app.use(express.static(publicPath));
+    app.use(express.static(util.files.tryGetSync(publicPath)));
 }
 
 

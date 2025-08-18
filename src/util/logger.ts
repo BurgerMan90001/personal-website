@@ -1,8 +1,6 @@
 
 import { NextFunction, Request, Response } from "express";
-interface loggerOptions {
-    
-}
+
 
 let totalRequests: number = 0;
 

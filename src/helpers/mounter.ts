@@ -1,5 +1,5 @@
 
 
-function controllers() {
+export function test() {
     
 }
