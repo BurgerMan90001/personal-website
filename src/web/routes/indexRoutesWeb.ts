@@ -10,5 +10,9 @@ const router:WebRouter = createRouter({
     indexControllerWeb.contact,
   ],
 });
-
+/*
+router.beforeEach((to, from, next) => {
+   if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
+})
+*/
 export default router;

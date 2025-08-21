@@ -3,29 +3,20 @@ import dotenv from 'dotenv';
 import express from 'express';
 import { logger } from './util/logger.js';
 import cors from 'cors';
-import taskRoutes from './api/routes/apiRoutes.js';
+import { apiRoutes } from './api/routes/apiRoutes.js';
+import { loggingEnabled, port, siteUrl } from './config/serverConfig.js'
+
 dotenv.config(); // load the env file
 
-const app: express.Application = express();
+const server: express.Application = express();
 
-const loggingEnabled: boolean = true;
-const port: string = process.env.PORT || "3000"; // Take a port 3000 for running server.
-const siteUrl: string = `http://localhost:${port}/`;
-
-app.use(cors()); // middleware to accept requests from different orgins/sources
+server.use(cors()); // middleware to accept requests from different orgins/sources
 useLogging(loggingEnabled);
 express.json(); // parses incoming requests as json
 express.urlencoded({ extended: true }); // parses form data in requests
-app.use('/tasks', taskRoutes); // mount tasks api
-
-/*
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-*/
+server.use('/api', apiRoutes); // mount tasks api
 
 startServer(port);
-
 
 /**
  * starts a simple http server locally on the specified port and logs the site url
@@ -33,7 +24,7 @@ startServer(port);
  */
 function startServer(port: string) {
 
-    app.listen(port, () => {
+    server.listen(port, () => {
         console.log("listening on : " + siteUrl); // show site
     });
 }
@@ -44,6 +35,6 @@ function startServer(port: string) {
  */
 function useLogging(loggingEnabled: boolean) {
   if (loggingEnabled) {
-      app.use(logger); // log all requests
+      server.use(logger); // log all requests
   }
 }

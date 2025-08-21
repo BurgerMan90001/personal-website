@@ -1,6 +1,6 @@
 import type { Task } from '@/core/models/Task'
 import type { Request, Response } from 'express'
-import type { ApiController} from './controllers'
+import type { ApiController } from './controllers'
 
 // mock database
 const tasks: Task[] = []
@@ -13,7 +13,7 @@ function findTaskById(id: string): Task | undefined {
   return tasks.find((t) => t.id === parseInt(id))
 }
 
-export const taskController: ApiController = {
+export const apiController: ApiController = {
   createTask(req: Request, res: Response): void {
     const task: Task = {
       id: tasks.length + 1,
