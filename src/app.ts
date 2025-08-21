@@ -1,5 +1,5 @@
 // frontend is vue
-import './assets/main.css'
+import './web/assets/main.css'
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
