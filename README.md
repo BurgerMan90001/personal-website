@@ -1,5 +1,7 @@
 # personal-website
 
+A simple personal website that is about me.
+
 ## Project Setup
 
 ```sh
