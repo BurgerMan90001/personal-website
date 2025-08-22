@@ -2,9 +2,8 @@
 <template>
 
   <RouterView></RouterView>
-
   <!--
-  <link rel="icon" href="/favicon.ico">
+
   target="_blank" rel="noopener noreferrer" for new tab hyperlinks just in case
   </head>
   -->
@@ -13,10 +12,3 @@
     -->
 
 </template>
-<style>
-.test {
-  /*min-height: 100vh;
-  background-color: aqua;
-  */
-}
-</style>

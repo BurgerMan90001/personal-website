@@ -4,7 +4,7 @@
   height: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+ 
   font-weight: normal;
 }
 
@@ -17,9 +17,8 @@ a, /* anchor and green */
   padding: 3px;
 }
 .flex-layout {
-  min-height: 100%;
   height: 100%;
-  padding-left: 10rem;
+  padding: 2rem;
   display: flex;
   place-items: center;
 }
