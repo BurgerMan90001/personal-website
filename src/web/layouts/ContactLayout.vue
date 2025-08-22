@@ -5,7 +5,7 @@
     <p>
     Contact me by email
     </p>
-    <div id="projects-container">
+    <div id="projects-container" class= 'green'>
         <nav>
             <ul>
             <li class= "project-toc-item">
