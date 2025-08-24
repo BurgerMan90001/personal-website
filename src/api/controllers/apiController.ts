@@ -24,7 +24,7 @@ export const apiController: ApiController = {
 
     tasks.push(task)
     res.status(201).json(task)
-    console.log('post')
+    
   },
   getAllTasks(req: Request, res: Response): void {
     console.log(res.constructor.name)
@@ -36,7 +36,7 @@ export const apiController: ApiController = {
     }
   },
   getTaskById(req: Request, res: Response): void {
-    console.log('get by id')
+
     const task = findTaskById(req.params.id)
 
     if (!task) {
@@ -47,7 +47,7 @@ export const apiController: ApiController = {
     }
   },
   updateTaskById(req: Request, res: Response): void {
-    console.log('update by id')
+
     const task = findTaskById(req.params.id)
 
     if (!task) {

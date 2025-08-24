@@ -1,7 +1,7 @@
 
 
 import { Router } from "express";
-import { apiController } from "../controllers/apiController";
+import { apiController } from "../controllers/apiController.ts";
 
 
 const router: Router = Router();
