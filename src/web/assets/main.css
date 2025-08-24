@@ -2,9 +2,9 @@
 
 #app {
   height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
- 
+  /*max-width: 1280px;*/
+  /*margin: 0 auto;*/
+
   font-weight: normal;
 }
 
@@ -15,12 +15,6 @@ a, /* anchor and green */
   color: hsla(160, 100%, 37%, 1);
   color: var(--vt-c-sage-soft);
   padding: 3px;
-}
-.flex-layout {
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  place-items: center;
 }
 
 body {
