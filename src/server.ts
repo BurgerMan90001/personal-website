@@ -5,7 +5,7 @@ import { logger } from './util/logger.ts';
 import cors from 'cors';
 import { apiRoutes } from './api/routes/apiRoutes.ts';
 import { loggingEnabled, port, siteUrl } from './config/serverConfig.ts'
-
+import { MongoClient } from 'mongodb';
 dotenv.config(); // load the env file
 
 const server: express.Application = express();
