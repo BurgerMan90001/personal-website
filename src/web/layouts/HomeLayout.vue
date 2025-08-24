@@ -5,13 +5,18 @@ import MainTitleText from '../components/MainTitleText.vue'
 <template>
   <div class="flex-layout">
     <header class="main-header"></header>
+
     <main>
       <section class="main-title-container">
+
         <MainTitleText class="main-title-text" title="This is my website" />
+        <img src="../assets/website-dinosaur.png" class="dinosaur-image" />
       </section>
-      <img src="../assets/website-dinosaur.png" class="dinosaur-image" />
+
     </main>
-    <footer></footer>
+    <footer class="main-footer">
+
+    </footer>
   </div>
 </template>
 
@@ -21,23 +26,33 @@ import MainTitleText from '../components/MainTitleText.vue'
   /*display: flex;*/
   place-items: center;
 
-  /*background-color: aqua;*/
 }
+.main-footer {
+  
+  width: 100%;
+  background-color: rgb(51, 50, 50);
+}
+.main-title-text {
 
+}
 main {
-  height: 100%;
+
 }
 .main-title-container {
   margin: 10rem;
-  background-color: aqua;
-  /*height: 100%*/
-}
-.dinosaur-image {
+  margin-top: 20rem;
+  display: flex;
+  flex-direction: row;
+
 
 }
+.dinosaur-image {
+  height: 200px;
+  width: 200px;
+}
 .main-header {
-  height: 20%;
+  height: 100px;
   width: 100%;
-  background-color: aqua;
+  background-color: rgb(51, 50, 50);
 }
 </style>
