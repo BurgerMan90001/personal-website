@@ -16,6 +16,7 @@ function findTaskById(id: string): Task | undefined {
 */
 export const apiController: ApiController = {
   createTask(req: Request, res: Response): void {
+    /*
     const task: Task = {
       id: tasks.length + 1,
       title: req.body.title,
@@ -25,10 +26,13 @@ export const apiController: ApiController = {
 
     tasks.push(task)
     res.status(201).json(task)
+    */
 
   },
+
   getAllTasks(req: Request, res: Response): void {
-    console.log(res.constructor.name)
+    console.log();
+    //console.log(res.constructor.name)
 
     /*
     if (tasks.length === 0) {

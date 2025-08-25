@@ -18,13 +18,16 @@ export async function connectToCluster() {
     console.log('connecting to database');
     await mongoose.connect(uri, clientOptions);
 
-    const db =  mongoose.connection;
+    const cluster = mongoose.connection;
 
     console.log('Connected to MongoDB at', uri )
 
-    const dataBases = await db.listDatabases();
-    
-    //console.log(await db.listCollections());
+    const dataBases = await cluster.listDatabases();
+
+
+
+
+    //console.log(await cluster.listCollections());
 
 
   } catch(error) {
