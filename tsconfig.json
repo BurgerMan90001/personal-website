@@ -4,15 +4,11 @@
     "isolatedModules": true,
   },
   "references": [
-    {
-      "path":"./tsconfig.server.json"
-    },
+  
     {
       "path": "./tsconfig.node.json"
     },
-    {
-      "path": "./tsconfig.app.json"
-    },
+    
     {
       "path": "./tsconfig.vitest.json"
     }

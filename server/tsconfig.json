@@ -12,6 +12,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist"
+
+    
   },
   "files": [
     "./src/server.ts"
