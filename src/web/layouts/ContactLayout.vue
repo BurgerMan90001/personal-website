@@ -1,23 +1,58 @@
+<script setup lang="ts">
+import RouterLinks from '../components/RouterLinks.vue'
+import MainTitleText from '../components/MainTitleText.vue';
+</script>
 <template>
-  <div id="content-container" class="container">
+  <div class="layout">
+    <header class="main-header"></header>
 
-    <h1 class="content-title">Hello</h1>
-    <p>
-    Contact me by email
-    </p>
-    <div id="projects-container" class= 'green'>
-        <nav>
-            <ul>
-            <li class= "project-toc-item">
-                <a href="mailto:paulcasigay@gmail.com">paulcasigay@gmail.com</a>
-            </li>
-            </ul>
-        </nav>
-    </div>
+    <main>
+      <section class="main-title-container">
+        <MainTitleText class="main-title-text"
+        title="Contact me by email"
+        sub-header="I prefer it">
+
+        </MainTitleText>
+        <div class="email-link">
+          <a href="mailto:paulcasigay@gmail.com">paulcasigay@gmail.com</a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="main-footer">
+
+    </footer>
   </div>
 </template>
+<style scoped>
+main {
+  background-color: var(--color-background-dark);
+  box-shadow: var(--drop-shadow);
+}
+.main-title-text {
+  /*margin: 10rem;*/
 
-<style>
+}
+.email-link {
+  margin-left: 10rem;
+  font-size: larger;
+}
+.main-title-container {
+  margin: 10rem;
+  height: 400px;
+  margin-top: 15rem;
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: var();
+  font-size: larger;
+
+}
+
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
