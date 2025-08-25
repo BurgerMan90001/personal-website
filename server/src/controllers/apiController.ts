@@ -1,18 +1,19 @@
-import type { Task } from '../models/Task.ts'
+//import type { Task } from '../models/Task.ts'
 import type { Request, Response } from 'express'
 import type { ApiController } from './controllers.ts'
 
-// mock database
-const tasks: Task[] = []
 
 // database search functions
+/*
 function findTaskIndexById(id: string): number {
-  return tasks.findIndex((task) => task.id === parseInt(id))
+
+  //return tasks.findIndex((task) => task.id === parseInt(id))
 }
 function findTaskById(id: string): Task | undefined {
-  return tasks.find((t) => t.id === parseInt(id))
-}
 
+  //return tasks.find((t) => t.id === parseInt(id))
+}
+*/
 export const apiController: ApiController = {
   createTask(req: Request, res: Response): void {
     const task: Task = {
@@ -29,14 +30,17 @@ export const apiController: ApiController = {
   getAllTasks(req: Request, res: Response): void {
     console.log(res.constructor.name)
 
+    /*
     if (tasks.length === 0) {
       res.status(404).send('No tasks found')
     } else {
       res.json(tasks)
     }
+    */
   },
   getTaskById(req: Request, res: Response): void {
 
+    /*
     const task = findTaskById(req.params.id)
 
     if (!task) {
@@ -45,9 +49,11 @@ export const apiController: ApiController = {
     } else {
       res.json(task)
     }
+      */
   },
   updateTaskById(req: Request, res: Response): void {
 
+    /*
     const task = findTaskById(req.params.id)
 
     if (!task) {
@@ -59,9 +65,11 @@ export const apiController: ApiController = {
 
       res.json(task)
     }
+      */
   },
 
   deleteTaskById(req: Request, res: Response) {
+    /*
     console.log('delete by id')
     const index = findTaskIndexById(req.params.id)
 
@@ -71,5 +79,6 @@ export const apiController: ApiController = {
       tasks.splice(index, 1)
       res.status(204).send()
     }
+      */
   },
 }
