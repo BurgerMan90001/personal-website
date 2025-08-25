@@ -20,7 +20,16 @@ a, /* anchor and green */
 body {
   height: 100vh;
 }
+.main-header {
+  height: 50px;
+  width: 100%;
+  background-color: var(--vt-c-navy);
+  border-bottom: 2px solid var(--vt-c-navy-soft);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.main-footer {
 
+}
 @media (hover: hover) {
   a:hover {
     border-bottom: 2px solid hsla(160, 100%, 37%, 0.2);
