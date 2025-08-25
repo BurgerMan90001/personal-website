@@ -3,7 +3,7 @@ import MainTitleText from '../components/MainTitleText.vue'
 </script>
 
 <template>
-  <div class="flex-layout">
+  <div class="layout">
     <header class="main-header"></header>
 
     <main>
@@ -22,32 +22,25 @@ import MainTitleText from '../components/MainTitleText.vue'
 </template>
 
 <style scoped>
-.flex-layout {
-  height: 100%;
-  /*display: flex;*/
-  place-items: center;
 
-}
 
 .main-header {
-  height: 100px;
+  height: 50px;
   width: 100%;
   background-color: var(--vt-c-navy);
   border-bottom: 2px solid var(--vt-c-navy-soft);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/*background-image: url('../assets/images/shapes.png');*/
-.main-title-text {
-  /*margin: 10rem;*/
-}
 main {
-
+  background-color: rgba(15, 14, 14, 0.089);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 .main-title-container {
   margin: 10rem;
   height: 400px;
   margin-top: 15rem;
-
 
   align-items: center;
   display: flex;
@@ -59,5 +52,4 @@ main {
   height: 200px;
   width: 200px;
 }
-
 </style>
