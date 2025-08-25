@@ -6,8 +6,8 @@ import cors from 'cors'
 import { apiRoutes } from './routes/apiRoutes.ts'
 import { loggingEnabled, port, siteUrl } from './config/apiServerConfig.ts'
 //import { MongoClient } from 'mongodb';
-import { bookSchema } from './models/bookSchema.ts'
-import { connectToDatabase} from './dataBase.ts';
+import { bookSchema } from './models/Book.ts'
+import { connectToCluster} from './dataBase.ts';
 import {promptInput} from './util/databaseCli.ts'
 //import { error } from 'console'
 
@@ -25,8 +25,8 @@ server.get('/', (req, res) => {
 //promptInput();
 
 //startServer(port);
-//connectToDatabase();
-connectToDatabase().catch(console.dir);
+
+connectToCluster();
 
 /**
  * starts a simple http server locally on the specified port and logs the site url

@@ -1,9 +1,16 @@
+import { Schema, model} from 'mongoose';
 
-export interface Task {
-  id: number;
-  title: string;
-  description: string;
-  completed: boolean;
-}
+
+// schema is the data definition
+export const taskSchema = new Schema({
+    id: Number,
+    title: String,
+    description: String,
+    completed: Boolean
+});
+
+
+export const taskModel = model('Task', taskSchema);
+
 
 

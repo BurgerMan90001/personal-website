@@ -16,12 +16,20 @@
     "mongoose": "^8.18.0"
   },
   "devDependencies": {
+    "@eslint/css": "^0.10.0",
+    "@eslint/js": "^9.34.0",
+    "@eslint/json": "^0.13.1",
+    "@eslint/markdown": "^7.2.0",
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "bcrypt": "^6.0.0",
+    "eslint": "^9.34.0",
+    "eslint-plugin-vue": "^10.4.0",
+    "globals": "^16.3.0",
     "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.41.0"
   }
 }
