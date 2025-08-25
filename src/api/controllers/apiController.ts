@@ -1,6 +1,6 @@
 import type { Task } from '@/core/models/Task'
 import type { Request, Response } from 'express'
-import type { ApiController } from './controllers'
+import type { ApiController } from './controllers.ts'
 
 // mock database
 const tasks: Task[] = []
@@ -24,7 +24,7 @@ export const apiController: ApiController = {
 
     tasks.push(task)
     res.status(201).json(task)
-    
+
   },
   getAllTasks(req: Request, res: Response): void {
     console.log(res.constructor.name)
