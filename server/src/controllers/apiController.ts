@@ -1,4 +1,4 @@
-import type { Task } from '@/core/models/Task'
+import type { Task } from '../models/Task.ts'
 import type { Request, Response } from 'express'
 import type { ApiController } from './controllers.ts'
 
