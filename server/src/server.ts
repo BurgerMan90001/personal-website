@@ -7,7 +7,8 @@ import { apiRoutes } from './routes/apiRoutes.ts'
 import { loggingEnabled, port, siteUrl } from './config/apiServerConfig.ts'
 //import { MongoClient } from 'mongodb';
 import { bookSchema } from './models/bookSchema.ts'
-import mongoose from 'mongoose'
+import { connectToDatabase} from './dataBase.ts';
+import {promptInput} from './util/databaseCli.ts'
 //import { error } from 'console'
 
 dotenv.config() // load the env file
@@ -21,8 +22,11 @@ mountMiddleware()
 server.get('/', (req, res) => {
   res.json({ data: 'index page' })
 })
+//promptInput();
 
-startServer(port)
+//startServer(port);
+//connectToDatabase();
+connectToDatabase().catch(console.dir);
 
 /**
  * starts a simple http server locally on the specified port and logs the site url
@@ -35,26 +39,8 @@ function startServer(port: string) {
     console.log('listening on : ' + siteUrl) // show site
   })
 
-  connectToDatabase()
 }
 
-function connectToDatabase() {
-  try {
-    mongoose.connect('mongodb://127.0.0.1:27017/Personal', {})
-    // paulcasigay
-    // Nzi9o2DoFbXa2bIK
-    const db = mongoose.connection
-    db.on('error', (err) => {
-      console.error(err)
-    })
-
-    db.once('open', () => {
-      console.log('Connected to MongoDB at mongodb://127.0.0.1:27017/Personal')
-    })
-  } catch (error) {
-    console.log(error)
-  }
-}
 
 /**
  * logs all requests
