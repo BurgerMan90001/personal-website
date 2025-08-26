@@ -10,7 +10,7 @@ import MainTitleText from '../components/MainTitleText.vue';
     <main>
       <section class="main-title-container">
 
-        <MainTitleText class="main-title-text"
+        <MainTitleText
         title="This is my website" subHeader="Its empty right now">
         </MainTitleText>
 
@@ -40,7 +40,6 @@ main {
   align-items: center;
   display: flex;
   flex-direction: row;
-
 
 }
 .dinosaur-image {
