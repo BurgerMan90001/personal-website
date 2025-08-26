@@ -10,7 +10,7 @@
     "start": "",
     "start-server": "",
     "start-client": "node dist/src/server.js",
-    "build": "cd client && npm run build && cd.. && cd server && npm run build && cd..",
+    "build": "rimraf dist && cd client && npm run build && cd.. && cd server && npm run build && cd..",
 
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
