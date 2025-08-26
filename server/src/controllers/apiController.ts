@@ -2,23 +2,13 @@
 import type { Request, Response } from 'express';
 //import type { ApiController } from './controllers.ts';
 
-import{ SongSchema, SongModel } from '../models/Song.ts';
+//import{ SongSchema, SongModel } from '../models/Song.ts';
+import { PollModel } from '../models/Poll.ts';
 
-// database search functions
-/*
-function findTaskIndexById(id: string): number {
 
-  //return tasks.findIndex((task) => task.id === parseInt(id))
-}
-function findTaskById(id: string): Task | undefined {
-
-  //return tasks.find((t) => t.id === parseInt(id))
-}
-*/
-
-export async function create(req: Request, res: Response) {
+export async function createPoll(req: Request, res: Response) {
   try {
-    const song = new SongModel(req.body);
+    const song = new PollModel(req.body);
     const savedSong = await song.save();
     res.status(201).json(savedSong);
   } catch (err: any) {
@@ -27,19 +17,19 @@ export async function create(req: Request, res: Response) {
   }
 }
 
-export async function getAllSongs(req: Request, res: Response) {
+export async function getAllPolls(req: Request, res: Response) {
 
     try {
-      const songs = await SongModel.find();
+      const songs = await PollModel.find();
       res.status(200).json(songs);
     } catch (err: any) {
       res.status(500).json({ error: err.message });
     }
     //console.log(res.constructor.name)
 }
-export async function getSongById(req: Request, res: Response) {
+export async function getPollById(req: Request, res: Response) {
   try {
-    const item = await SongModel.findById(req.params.id);
+    const item = await PollModel.findById(req.params.id);
     if (!item) return res.status(404).json({ error: "Item not found" });
     res.status(200).json(item);
   } catch (err: any) {
@@ -56,9 +46,9 @@ export async function getSongById(req: Request, res: Response) {
     }
       */
   }
-export async function updateSongById(req: Request, res: Response) {
+export async function updatePollById(req: Request, res: Response) {
   try {
-    const updatedItem = await SongModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedItem = await PollModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updatedItem) {
       res.status(404).json({ error: "Item not found" })
     }
@@ -82,9 +72,9 @@ export async function updateSongById(req: Request, res: Response) {
       */
 }
 
-export async function deleteSongById(req: Request, res: Response) {
+export async function deletePollById(req: Request, res: Response) {
   try {
-    const deletedItem = await SongModel.findByIdAndDelete(req.params.id);
+    const deletedItem = await PollModel.findByIdAndDelete(req.params.id);
     if (!deletedItem) return res.status(404).json({ error: "Item not found" });
     res.status(200).json({ message: "Item deleted" });
   } catch (err: any) {

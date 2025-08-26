@@ -2,10 +2,25 @@
 import {Schema, model} from 'mongoose';
 
 export const SongSchema = new Schema({
-    id: Number,
-    title: String,
-    description: String,
-    completed: Boolean
+
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    artist: {
+      type: String,
+      
+    },
+    /*
+    cover: {
+
+    }
+    */
+
 });
 
 

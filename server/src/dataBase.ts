@@ -5,11 +5,12 @@ import bcrypt from 'bcrypt';
 const SALT_WORK_FACTOR: number = 10;
 
 const uri: string = "mongodb+srv://paulcasigay:Nzi9o2DoFbXa2bIK@personal.tihsi3p.mongodb.net/?retryWrites=true&w=majority&appName=Personal";
-
+import { SongModel } from './models/Song';
 //const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 
 const clientOptions = {
-  dbName: 'sound_app',
+  dbName: 'sample_mflix',
+
 }
 
 export async function connectToCluster() {
@@ -20,6 +21,7 @@ export async function connectToCluster() {
     const soundAppDatabase = mongoose.connection.collection('sound_app');
 
 
+    
     console.log('Connected to MongoDB at', uri )
 
     //const dataBases = await cluster.listDatabases();

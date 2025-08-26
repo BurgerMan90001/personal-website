@@ -8,7 +8,7 @@ import { port, siteUrl } from './config/serverConfig.ts'
 //import { MongoClient } from 'mongodb';
 //import { BookSchema } from './models/Book.ts'
 import { connectToCluster} from './dataBase.ts';
-import {promptInput} from './databaseCli.ts'
+import {promptInput} from './cli.ts'
 //import { error } from 'console'
 
 dotenv.config() // load the env file
