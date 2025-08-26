@@ -1,6 +1,6 @@
 # personal-website
 
-A simple personal website.
+A simple personal website using mongodb, express, nodejs, and vue. 
 
 ## Project Setup
 ```sh
