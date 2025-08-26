@@ -11,6 +11,3 @@ export const TaskSchema = new Schema({
 
 
 export const TaskModel = model('Task', TaskSchema);
-
-
-

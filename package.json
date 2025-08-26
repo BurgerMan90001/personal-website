@@ -10,8 +10,10 @@
     "dev-api": "nodemon",
     "build-api": "vue-tsc --build",
     "serve-api": "node dist/src/server.js",
+
     "dev-web": "vite",
     "build-web": "npm-run-all type-check \"build-only {@}\" --",
+    
     "build": "npm run build-api && npm run build-web",
     "preview": "vite preview",
     "build-only": "vite build",
