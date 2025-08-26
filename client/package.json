@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --build && npx vite build --emptyOutDir",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   
