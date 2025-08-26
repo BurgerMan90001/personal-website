@@ -1,14 +1,14 @@
 // express is the backend server
 import dotenv from 'dotenv'
 import express from 'express'
-import { logger } from './util/logger.ts'
+import { logger } from './util/logger'
 import cors from 'cors'
-import { apiRoutes } from './routes/apiRoutes.ts'
-import { port, siteUrl } from './config/serverConfig.ts'
+import { apiRoutes } from './routes/apiRoutes'
+import { port, siteUrl } from './config/serverConfig'
 //import { MongoClient } from 'mongodb';
 //import { BookSchema } from './models/Book.ts'
-import { connectToCluster} from './dataBase.ts';
-import {promptInput} from './cli.ts'
+import { connectToCluster} from './dataBase';
+import {promptInput} from './cli'
 //import { error } from 'console'
 
 dotenv.config() // load the env file
