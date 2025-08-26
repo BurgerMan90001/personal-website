@@ -1,7 +1,7 @@
 
 import {Schema, model} from 'mongoose';
 
-export const songSchema = new Schema({
+export const SongSchema = new Schema({
     id: Number,
     title: String,
     description: String,
@@ -9,4 +9,4 @@ export const songSchema = new Schema({
 });
 
 
-export const taskModel = model('Task', songSchema);
+export const SongModel = model('Song', SongSchema);

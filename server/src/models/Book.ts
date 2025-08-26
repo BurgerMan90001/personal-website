@@ -1,9 +1,9 @@
 import {Schema, model} from 'mongoose';
 // test schema
-export const bookSchema = new Schema({
+export const BookSchema = new Schema({
     title: String,
     author: String,
     year: Number
 });
 
-export const bookModel = model('Book', bookSchema);
+export const BookModel = model('Book', BookSchema);

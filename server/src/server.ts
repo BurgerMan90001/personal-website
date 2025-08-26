@@ -4,11 +4,11 @@ import express from 'express'
 import { logger } from './util/logger.ts'
 import cors from 'cors'
 import { apiRoutes } from './routes/apiRoutes.ts'
-import { loggingEnabled, port, siteUrl } from './config/apiServerConfig.ts'
+import { port, siteUrl } from './config/serverConfig.ts'
 //import { MongoClient } from 'mongodb';
-import { bookSchema } from './models/Book.ts'
+//import { BookSchema } from './models/Book.ts'
 import { connectToCluster} from './dataBase.ts';
-import {promptInput} from './util/databaseCli.ts'
+import {promptInput} from './databaseCli.ts'
 //import { error } from 'console'
 
 dotenv.config() // load the env file
@@ -17,16 +17,30 @@ dotenv.config() // load the env file
 
 const server: express.Application = express()
 
-mountMiddleware()
+server.use(cors()) // middleware to accept requests from different orgins/sources
+server.use(logger) // log all requests
+server.use(express.json()) // parses incoming requests as json
+server.use(express.urlencoded({ extended: true })) // parses form data in requests
 
-server.get('/', (req, res) => {
+server.get('/', (req, res) => { // testing
   res.json({ data: 'index page' })
 })
+
 //promptInput();
 
-//startServer(port);
 
-connectToCluster();
+run();
+
+async function run() {
+  const cluster = await connectToCluster();
+
+  server.use('/api', apiRoutes) // mount tasks api
+
+  startServer(port);
+
+}
+
+
 
 /**
  * starts a simple http server locally on the specified port and logs the site url
@@ -41,17 +55,7 @@ function startServer(port: string) {
 
 }
 
-
-/**
- * logs all requests
- * @param loggingEnabled -
- */
-function useLogging(loggingEnabled: boolean) {
-  if (loggingEnabled) {
-    server.use(logger) // log all requests
-  }
-}
-
+/*
 function mountMiddleware() {
   server.use(cors()) // middleware to accept requests from different orgins/sources
   useLogging(loggingEnabled)
@@ -59,3 +63,4 @@ function mountMiddleware() {
   server.use(express.urlencoded({ extended: true })) // parses form data in requests
   server.use('/api', apiRoutes) // mount tasks api
 }
+*/
