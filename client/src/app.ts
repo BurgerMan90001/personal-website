@@ -1,8 +1,8 @@
 // frontend is vue
-import './web/assets/css/main.css'
+import './assets/css/main.css'
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import App from 'App.vue';
+import App from './App.vue';
 import indexRoutes from './routes/indexRoutesWeb';
 
 const app = createApp(App);
