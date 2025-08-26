@@ -9,34 +9,35 @@ const uri: string = "mongodb+srv://paulcasigay:Nzi9o2DoFbXa2bIK@personal.tihsi3p
 //const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 
 const clientOptions = {
-  dbName: 'sample_mflix',
+  dbName: 'sound_app',
 }
-
 
 export async function connectToCluster() {
   try {
     console.log('connecting to database');
     await mongoose.connect(uri, clientOptions);
 
-    const cluster = mongoose.connection;
+    const soundAppDatabase = mongoose.connection.collection('sound_app');
+
 
     console.log('Connected to MongoDB at', uri )
 
-    const dataBases = await cluster.listDatabases();
-
-
-
+    //const dataBases = await cluster.listDatabases();
 
     //console.log(await cluster.listCollections());
+
+    //return cluster;
+
 
 
   } catch(error) {
     console.error(error);
-    disconnectDatabase();
+    disconnectFromCluster();
   }
 }
 
-function disconnectDatabase() {
+export function disconnectFromCluster() {
+
   mongoose.disconnect();
   console.log('Disconnecting from database');
 }

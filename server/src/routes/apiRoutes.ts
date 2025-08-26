@@ -1,19 +1,19 @@
 
 
 import { Router } from "express";
-import { apiController } from "../controllers/apiController.ts";
+import * as controller from "../controllers/apiController.ts";
 
 
 const router: Router = Router();
 
-router.post('/', apiController.createTask); // /tasks POST
+router.post('/', controller.create); // /tasks POST
+//apiController.createTask
+router.get('/', controller.getAllSongs); // /tasks GET
+// apiController.getAllTasks
+router.get('/:id', controller.getSongById); // /tasks:id GET
 
-router.get('/', apiController.getAllTasks); // /tasks GET
+router.put('/:id', controller.updateSongById); // /tasks:id PUT
 
-router.get('/:id', apiController.getTaskById); // /tasks:id GET
-
-router.put('/:id', apiController.updateTaskById); // /tasks:id PUT
-
-router.delete('/:id', apiController.deleteTaskById); // /tasks:id DELETE
+router.delete('/:id', controller.deleteSongById); // /tasks:id DELETE
 
 export { router as apiRoutes };

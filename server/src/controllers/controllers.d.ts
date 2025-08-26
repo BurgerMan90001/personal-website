@@ -2,6 +2,7 @@
 
 import { Request, Response } from 'express';
 
+/*
 export interface ApiController {
     createTask(req: Request, res: Response): void;
     getAllTasks(req: Request, res: Response): void;
@@ -9,3 +10,4 @@ export interface ApiController {
     updateTaskById(req: Request, res: Response): void;
     deleteTaskById(req: Request, res: Response): void;
 }
+*/

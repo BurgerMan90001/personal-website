@@ -5,4 +5,4 @@ export const UserSchema = new Schema({
 });
 
 
-export const taskModel = model('Task', UserSchema);
+export const UserModel = model('User', UserSchema);

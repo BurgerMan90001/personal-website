@@ -2,7 +2,7 @@ import { Schema, model} from 'mongoose';
 
 
 // schema is the data definition
-export const taskSchema = new Schema({
+export const TaskSchema = new Schema({
     id: Number,
     title: String,
     description: String,
@@ -10,7 +10,7 @@ export const taskSchema = new Schema({
 });
 
 
-export const taskModel = model('Task', taskSchema);
+export const TaskModel = model('Task', TaskSchema);
 
 
 

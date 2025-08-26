@@ -8,29 +8,39 @@ const rl = readline.createInterface({
   prompt: 'Command: ',
 });
 
-
-
 rl.on('line', (line: string) => {
-  respond(line);
+  //respond(line);
   rl.prompt();
 
 }).on('close', () => {
   sayGoodbye();
 });
+
+
 /**
  * Response
  * @param line
  */
-function respond(line:string) {
+
+function executeCommand(line:string) {
+
+
   switch (line.trim()) {
-    case 'hello':
-      console.log('world!');
+    case '':
+
+      //console.log('world!');
       break;
+    case '':
+
+      break;
+
     default:
-      console.log(`Say what? I might have heard '${line.trim()}'`);
+      console.log(`Say what? What does '${line.trim()}' mean?`);
       break;
   }
+
 }
+
 function sayGoodbye() {
   console.log('Have a great day!');
   process.exit(0);
@@ -38,5 +48,3 @@ function sayGoodbye() {
 export function promptInput() {
   rl.prompt();
 }
-
-
