@@ -1,9 +1,7 @@
 //import type { Task } from '../models/Task.ts'
 import type { Request, Response } from 'express';
-//import type { ApiController } from './controllers.ts';
 
-//import{ SongSchema, SongModel } from '../models/Song.ts';
-import { PollModel } from '../models/Poll.ts';
+import { PollModel } from '../models/Poll';
 
 
 export async function createPoll(req: Request, res: Response) {
