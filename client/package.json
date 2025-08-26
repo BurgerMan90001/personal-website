@@ -6,8 +6,7 @@
     "build": "vue-tsc --build && npx vite build --emptyOutDir",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  
   "devDependencies": {
     "@types/node": "^24.3.0",
     "@vitejs/plugin-vue": "^6.0.1",
