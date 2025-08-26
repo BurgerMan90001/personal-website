@@ -8,11 +8,11 @@ import MainTitleText from '../components/MainTitleText.vue';
 
     <main>
       <section class="main-title-container">
-        <MainTitleText class="main-title-text"
+        <MainTitleText
         title="Contact me by email"
         sub-header="I prefer it">
-
         </MainTitleText>
+
         <div class="email-link">
           <a href="mailto:paulcasigay@gmail.com">paulcasigay@gmail.com</a>
 
@@ -32,10 +32,7 @@ main {
   background-color: var(--color-background-dark);
   box-shadow: var(--drop-shadow);
 }
-.main-title-text {
-  /*margin: 10rem;*/
 
-}
 .email-link {
   margin-left: 10rem;
   font-size: larger;

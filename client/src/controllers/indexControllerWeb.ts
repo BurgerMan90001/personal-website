@@ -14,7 +14,7 @@ export const about: RouteRecordRaw = {
   // route level code-splitting
   // this generates a separate chunk (About.[hash].js) for this route
   // which is lazy-loaded when the route is visited.
-  component: () => import('../layouts/MediaLinksLayout.vue'),
+  component: () => import('../layouts/ProjectsLayout.vue'),
 };
 
 export const contact: RouteRecordRaw = {
