@@ -1,10 +1,11 @@
 
-import { http } from './request'
+//import { http } from './request'
 
-
+/*
 export default {
   getById(id: string) {
     if (id) { // not empty
+
       return http.get(`/tasks/products/${id}`)
     }
     else {
@@ -37,5 +38,5 @@ export default {
       return http.get(`/tasks/products/${id}`)
     }
   }
-    */
-}
+*/
+

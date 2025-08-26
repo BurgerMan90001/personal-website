@@ -1,21 +1,32 @@
 {
   "compilerOptions": {
+    /*
     "target": "es6",
     "module": "nodenext",
     "moduleResolution": "nodenext",
 
-    "allowImportingTsExtensions": true,
-    "noEmit" : true,
-
+    
+    
+    */
     "strict": true,
-    "esModuleInterop": true,
+
     "skipLibCheck": true,
+
+    "esModuleInterop": true,
+
+    "noEmit" : true,
+    "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "outDir": "dist",
+    "rootDir": "src",
+
+    "diagnostics": true,
+    "extendedDiagnostics": true,
+    "explainFiles": false,
+
 
     
   },
-  "files": [
-    "./src/server.ts"
-],
+  "include": ["src/"],
+  "exclude": ["node_modules"],
 }

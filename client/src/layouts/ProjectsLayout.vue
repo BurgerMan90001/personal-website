@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <h1>Links</h1>
+    <h1>Projects</h1>
   </div>
 </template>
 
