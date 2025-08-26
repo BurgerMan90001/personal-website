@@ -13,20 +13,9 @@
     //"emitDeclarationOnly": true,
     "forceConsistentCasingInFileNames": true,
   
-    //"allowImportingTsExtensions": true,
     "esModuleInterop": true,
-    "outDir": "./dist",
+    "outDir": "../dist/server",
     "rootDir": "./src",
-    
-
-    /*
-    "diagnostics": true,
-    "extendedDiagnostics": true,
-    "explainFiles": false,
-    */
-    
-
-
     
   },
   
