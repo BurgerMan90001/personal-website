@@ -20,16 +20,7 @@ export async function connectToCluster() {
 
     const soundAppDatabase = mongoose.connection.collection('sound_app');
 
-
-    
     console.log('Connected to MongoDB at', uri )
-
-    //const dataBases = await cluster.listDatabases();
-
-    //console.log(await cluster.listCollections());
-
-    //return cluster;
-
 
 
   } catch(error) {

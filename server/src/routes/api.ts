@@ -1,7 +1,7 @@
 
 
 import { Router } from "express";
-import * as controller from "../controllers/apiController";
+import * as controller from "../controllers/api";
 
 
 const router: Router = Router();

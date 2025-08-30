@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import express from 'express'
 import { logger } from './util/logger'
 import cors from 'cors'
-import { apiRoutes } from './routes/apiRoutes'
+import { apiRoutes } from './routes/api'
 import { port, siteUrl } from './config/serverConfig'
 //import { MongoClient } from 'mongodb';
 //import { BookSchema } from './models/Book.ts'
@@ -22,8 +22,13 @@ server.use(logger) // log all requests
 server.use(express.json()) // parses incoming requests as json
 server.use(express.urlencoded({ extended: true })) // parses form data in requests
 
-server.get('/', (req, res) => { // testing
+
+server.get('/ ',(req, res) => { // testing
   res.json({ data: 'index page' })
+});
+
+server.all('*',(req, res) => {
+  res.redirect('https://www.geeksforgeeks.org')
 })
 
 //promptInput();
