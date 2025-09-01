@@ -1,1 +1,0 @@
-import{_ as o,c as t,o as s,a as c}from"./index-LLqqzq-a.js";const r={},a={class:"layout"};function n(_,e){return s(),t("div",a,[...e[0]||(e[0]=[c("h1",null,"Projects",-1)])])}const d=o(r,[["render",n]]);export{d as default};

@@ -1,0 +1,10 @@
+
+
+services:
+  client:
+    ports:
+      - "3000:3000"
+  server:
+    ports:
+      - "5000:5000"
+    

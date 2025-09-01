@@ -13,7 +13,7 @@ export default defineConfig({
     vueDevTools(),
   ],
   build: {
-    outDir: '../dist/client',
+    outDir: 'dist',
   },
   base: '/',
   resolve: {

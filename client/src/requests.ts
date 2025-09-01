@@ -1,7 +1,7 @@
-import {SongModel, SongSchema} from './models/Song';
+//import {SongModel, SongSchema} from './models/Song';
 
 //const apiUrl: string = ''
-
+/*
 const testSong = new SongModel(
   {
     title: 'Greatest hits',
@@ -15,7 +15,8 @@ const requestOptions = {
   body: JSON.stringify(testSong)
 
 };
-async function createSong()
+*/
+async function post()
 {
   try {
     const response = await fetch('http://localhost:3000/api', requestOptions);
