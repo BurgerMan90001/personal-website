@@ -3,7 +3,7 @@ import './assets/css/main.css'
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import App from './App.vue';
-import indexRoutes from './routes/indexRoutesWeb';
+import indexRoutes from './routes';
 
 const app = createApp(App);
 

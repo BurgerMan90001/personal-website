@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, type Router as WebRouter } from 'vue-router'
-import * as indexControllerWeb from '../controllers/indexControllerWeb';
+import * as indexControllerWeb from '../controllers';
 
 
 const router:WebRouter = createRouter({
