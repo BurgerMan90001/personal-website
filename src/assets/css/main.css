@@ -1,0 +1,10 @@
+@import "./base.css";
+.wrapper {
+  height: 100%;
+
+  background-color: rebeccapurple;
+}
+
+div {
+  background-color: rebeccapurple;
+}
