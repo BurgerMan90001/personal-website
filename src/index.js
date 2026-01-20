@@ -4,3 +4,4 @@ const img = document.createElement("img");
 img.src = dino;
 
 document.body.appendChild(img);
+
