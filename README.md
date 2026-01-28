@@ -1,13 +1,5 @@
 # personal-website
 
-A simple personal website using mongodb, express, nodejs, and vue. 
+### Link: https://personal-website-hfho.onrender.com
 
-## Project Setup
-```sh
-npm install
-```
-
-### Run this to start on local host and visit the link
-```sh
-npm run start
-```
+My personal website.
