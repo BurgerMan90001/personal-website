@@ -1,0 +1,27 @@
+@import "./base.css";
+
+body {
+  display: flex;
+  height: 100%;
+
+  color: whitesmoke;
+}
+.wrapper {
+  flex-direction: column;
+  flex: 1;
+}
+.header {
+  top: 0;
+}
+.header,
+.footer {
+  min-height: 10%;
+  background-color: var(--c-black-soft);
+}
+.footer {
+  bottom: 0;
+}
+.main {
+  height: 80;
+  margin: 3rem 25rem;
+}
