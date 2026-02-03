@@ -36,5 +36,4 @@ export default defineConfig([
     extends: ["css/recommended"],
   },
   eslintConfigPrettier,
-
 ]);
